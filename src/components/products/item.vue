@@ -6,7 +6,7 @@
     </dt>
     <dd>
       <h3>
-        <router-link :to="{name:'productDeatil'}">{{meta.tltle}}</router-link>
+        <router-link :to="{name:'productDeatil'}">{{meta.title}}</router-link>
       </h3>
       <p>
         <el-rate v-model="meta.score"
@@ -18,7 +18,7 @@
         <span v-if="meta.score > 4.5">很好</span>
         <span v-else-if="meta.score > 4">好</span>
         <span v-else-if="meta.score > 3.5">不错</span>
-        <span v-else-if="meta.score > 3.5">一般</span>
+        <span v-else-if="meta.score > 3">一般</span>
         <span v-else>差</span>
         <span class="">{{meta.score}}分</span>
         <span class="s-item-comment-total">{{meta.commentNum}}人评论</span>
@@ -64,6 +64,9 @@
 </template>
 <script>
 export default {
-  props: ['meta']
+  props: ['meta'],
+  mounted () {
+    console.log(this.meta)
+  }
 }
 </script>

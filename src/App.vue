@@ -5,12 +5,17 @@
 </template>
 
 <script>
-
 export default {
   name: 'app',
   created () {
     if (sessionStorage.getItem('store')) {
-      this.$store.replaceState(Object.assign({}, this.$store.state, JSON.parse(sessionStorage.getItem('store'))))
+      this.$store.replaceState(
+        Object.assign(
+          {},
+          this.$store.state,
+          JSON.parse(sessionStorage.getItem('store'))
+        )
+      )
     }
     // 在页面刷新时将store保存到sessionStorage里
     window.addEventListener('beforeunload', () => {

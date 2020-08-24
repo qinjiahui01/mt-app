@@ -13,7 +13,8 @@
       <dt>{{index}}</dt>
       <dd>
         <span v-for="city in item"
-              :key="city.id">{{city.name}}</span>
+              :key="city.id"
+              @click="changeCity(city)">{{city.name}}</span>
       </dd>
     </dl>
   </div>
@@ -39,6 +40,14 @@ export default {
       })
       this.cityGroup = obj
     })
+  },
+  methods: {
+    changeCity (item) {
+      this.city = item.name
+      this.$store.dispatch('setPosition', item)
+      sessionStorage.setItem('store', JSON.stringify(this.$store.state))
+      this.$router.push('/index')
+    }
   }
 }
 </script>

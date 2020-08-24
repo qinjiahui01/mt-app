@@ -24,6 +24,26 @@ npm run test
 ```
 npm run lint
 ```
+# 功能
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+## 注册
+
+![注册](assets/image-20200824110628592.png)
+
+## 登录功能
+
+![登录](assets/image-20200824110428660.png)
+
+## 首页
+
+![首页](assets/image-20200824132048971.png)
+
+
+
+## 切换城市页
+
+![切换城市](assets/image-20200824134553170.png)
+
+## 商品列表页
+
+![商品列表](assets/image-20200824134412150.png)

@@ -38,6 +38,7 @@ export default {
   created () {
     if (!this.$store.state.position.name) {
       api.getCurPosition().then(res => {
+        console.log(res)
         this.$store.dispatch('setPosition', res.data.data)
         this.nearCity = res.data.data.nearCity
       })

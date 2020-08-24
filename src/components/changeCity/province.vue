@@ -66,24 +66,28 @@ export default {
         this.provinceActive = false
       }
     },
+    // 改变选中的城市
     changeCityActive (flag) {
       this.cityActive = flag
       if (flag) {
         this.provinceActive = false
       }
     },
+    // 更改当前省份
     changProvince (item) {
       this.province = item.name
       this.cityDisabled = false
       this.cityList = item.cityInfoList
       this.provinceActive = false
     },
+    // 更改当前城市
     changeCity (item) {
       this.city = item.name
       this.$store.dispatch('setPosition', item)
       sessionStorage.setItem('store', JSON.stringify(this.$store.state))
       this.$router.push('/index')
     },
+    // 搜索城市
     remoteMethod (val) {
       // 请求后端接口
     }
